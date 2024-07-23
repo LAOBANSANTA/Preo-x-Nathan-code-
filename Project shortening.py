@@ -1,5 +1,8 @@
 from tkinter import *
 #SHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+# preo ur so freaky :>>
+# hhehehe
+
 window = Tk()
 window.geometry("1000x1000")
 window.title("Nathan's Shopping Cart")
