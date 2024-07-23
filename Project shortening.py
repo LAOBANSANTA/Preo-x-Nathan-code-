@@ -1,5 +1,5 @@
 from tkinter import *
-
+#SHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 window = Tk()
 window.geometry("1000x1000")
 window.title("Nathan's Shopping Cart")
