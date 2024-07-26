@@ -2,6 +2,7 @@ from tkinter import *
 #SHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 # preo ur so freaky :>>
 # hhehehe
+#freak
 
 window = Tk()
 window.geometry("1000x1000")
