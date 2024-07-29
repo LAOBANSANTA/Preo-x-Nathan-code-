@@ -4,8 +4,6 @@ window = Tk()
 window.geometry("1000x1000")
 window.title("Preo's Shopping Cart")
 
-# hello
-
 # Initialize the main data
 category = {
     "Drinks": {
@@ -291,7 +289,6 @@ def display_shoppingcart(categoryName):
     # Ns men
     five_percent_discount_button = Button(window, text="NS Men 5% Discount", command=lambda: apply_discount(5), font=("Arial", 12))
     five_percent_discount_button.place(x=900, y=210)
-
 
     # Reapply the discount state if a discount has already been applied
     if discount_applied:
