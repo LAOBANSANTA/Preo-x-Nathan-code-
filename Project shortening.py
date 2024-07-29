@@ -2,7 +2,7 @@ from tkinter import *
 
 window = Tk()
 window.geometry("1000x1000")
-window.title("Nathan's Shopping Cart")
+window.title("Preo's Shopping Cart")
 
 # Initialize the main data
 category = {
