@@ -358,18 +358,15 @@ def display_checkout(categoryName):
     clear_window()
     row = 0
 
-    # Configure the columns for the grid layout, giving weight for resizing : centering the stuff
-    window.grid_columnconfigure(0, weight=2)
-    window.grid_columnconfigure(1, weight=1)
-    # window.grid_columnconfigure(2, weight=1)
-    # window.grid_columnconfigure(3, weight=1)
+    # Configure the columns for the grid layout
+    window.grid_columnconfigure(0, weight=1)
 
-    # Making the category label gui. Centering it
-    category_label = Label(window, text="Checkout", font=("Arial", 14, "bold"))
+    # Making the category label GUI and centering it
+    category_label = Label(window, text="Checkout", font=("Arial", 20, "bold"))
     category_label.grid(row=row, column=0, columnspan=4, pady=10, sticky='ew')
     row += 1
 
-    # initialise the total price
+    # Initialize the total price
     total_price = 0
     # Iterate over all categories and their items to calculate the total price
     for cat, items in category.items():
@@ -382,39 +379,40 @@ def display_checkout(categoryName):
                 item_total = itemPrice * itemQuantity
                 total_price += item_total
 
-                # create a label for each item
-                item_label = Label(window, text=f"{itemName} - Quantity: {itemQuantity} - Total: ${item_total:.2f}",
+                # Create a label for each item
+                item_label = Label(window, text=f"{itemName} : Quantity: {itemQuantity} : Total: ${item_total:.2f}",
                                    font=("Arial", 12))
-                item_label.grid(row=row, column=0, padx=5, sticky='w')
+                item_label.grid(row=row, column=0, columnspan=4, padx=5, sticky='ew')
+
                 row += 1
 
     GST_price = (9 / 100) * total_price
 
-
     # Apply discount if applicable
     if discount_applied:
-
-        discount_amount = (discount_percentage/100) * total_price
+        discount_amount = (discount_percentage / 100) * total_price
         discounted_price = total_price - discount_amount + GST_price
 
-        total_price_label = Label(window, text= f"Total Price of the items: ${total_price:.2f}\n"
-                                                f"GST amount (9%): ${GST_price:.2f}\n"  
+        total_price_label = Label(window, text=f"Total Price of the items: ${total_price:.2f}\n"
+                                                f"GST amount (9%): ${GST_price:.2f}\n"
                                                 f"Discount ({discount_percentage}%): ${discount_amount:.2f}\n"
-                                                f"Final payable amount: ${discounted_price:.2f}", font=("Arial", 12, "italic"), fg="blue")
-
+                                                f"Final payable amount: ${discounted_price:.2f}",
+                                  font=("Arial", 12, "italic"), fg="blue")
     else:
         total_price_label = Label(window, text=f"GST amount (9%): ${GST_price:.2f}\n"
                                                f"Total Price of the items: ${total_price:.2f}\n"
                                                f"Total Price including GST: ${GST_price + total_price:.2f}",
                                   font=("Arial", 12, "italic"), fg="blue")
 
-    total_price_label.grid(row=row, column=0, columnspan=4, pady=10)
+    # Center the total price label in the window
+    total_price_label.grid(row=row, column=0, columnspan=4, pady=10, sticky='ew')
     row += 1
 
+    # Goodbye message
     Goodbye_label = Label(window, text="Thank you so much for using Preo's Shopping Cart! \n"
                                        "We hope to see you again as you will get to see PREO being A freaaakyyyy time traveller!",
                           font=("Arial", 12))
-    Goodbye_label.grid(row=row, column=0, columnspan=4, pady=10)
+    Goodbye_label.grid(row=row, column=0, columnspan=4, pady=10, sticky='ew')
 
 
 def main_menu():
@@ -444,8 +442,8 @@ def main_menu():
 
     # Check_out button directly from the main menu for them to check what items they currently have.
     # Could even be to directly checkout for if they want to from the main menu for whatever reason.
-    checkout_button = Button(window, text="Shopping Cart", command=lambda: display_shoppingcart(None), font=("Arial", 12))
-    checkout_button.place(x=1400, y=50)
+    checkout_button = Button(window, text="Shopping Cart", command=lambda: display_shoppingcart(None), font=("Arial", 14))
+    checkout_button.place(x=1380, y=50)
 
     # Labels of items right under the category.
     drinks_label = Label(window,
@@ -496,6 +494,7 @@ def start_menu():
                           font=("Arial", 12),
                           command=main_menu)
     start_button.pack(expand=True)
+
 
 
 # Initialize the main menu
