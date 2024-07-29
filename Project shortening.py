@@ -116,10 +116,8 @@ def display_category_items(categoryName):
     for itemID, itemDetails in category[categoryName].items():
         # Getting the name
         itemName = itemDetails['name']
-        print("ItemName: ",itemName)
         # Getting the price
         itemPrice = itemDetails['price']
-        print("ItemPrice: ", itemPrice)
         # Getting the quantity
         itemQuantity = itemDetails['quantity']
 
