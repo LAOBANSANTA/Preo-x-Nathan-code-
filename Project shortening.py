@@ -4,7 +4,7 @@ window = Tk()
 window.geometry("1000x1000")
 window.title("Preo's Shopping Cart")
 
-# final one
+# The final one
 
 # Initialize the main data
 category = {
