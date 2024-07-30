@@ -4,6 +4,8 @@ window = Tk()
 window.geometry("1000x1000")
 window.title("Preo's Shopping Cart")
 
+# final one
+
 # Initialize the main data
 category = {
     "Drinks": {
@@ -313,13 +315,11 @@ def apply_discount(discount):
         # Indicate that the discount has been applied by displaying a label
         discount_label = Label(window, text=f"{discount_percentage}% Discount Applied!", font=("Arial", 12, "bold"),fg="green")
         discount_label.place(x=900, y=50)
-        print(f"{discount_percentage}% discount applied")
 
         # Disable all discount buttons
         ten_percent_discount_button.config(state=DISABLED)
         eight_percent_discount_button.config(state=DISABLED)
         five_percent_discount_button.config(state=DISABLED)
-
 
 # Updating item quantity
 def update_item_quantity(itemID, change, quantity_labels):
@@ -349,8 +349,6 @@ def update_item_quantity(itemID, change, quantity_labels):
 
                 # Update the total price label
                 total_price_label.config(text=f"Total Price: ${total_price:.2f}")
-
-
 
 def display_checkout(categoryName):
     # Declare global variables to ensure the function can modify them
@@ -413,7 +411,6 @@ def display_checkout(categoryName):
                                        "We hope to see you again as you will get to see PREO being A freaaakyyyy time traveller!",
                           font=("Arial", 12))
     Goodbye_label.grid(row=row, column=0, columnspan=4, pady=10, sticky='ew')
-
 
 def main_menu():
     clear_window()
@@ -486,7 +483,6 @@ def main_menu():
                          font=("Arial", 10, "bold"), fg="Black", bg="lavender", bd=5, padx=10, pady=10)
     snacks_label.place(x=1115, y=500)
 
-
 def start_menu():
     start_button = Button(window,
                           text="Welcome to Preo's shopping cart!\n"
@@ -494,8 +490,6 @@ def start_menu():
                           font=("Arial", 12),
                           command=main_menu)
     start_button.pack(expand=True)
-
-
 
 # Initialize the main menu
 start_menu()
